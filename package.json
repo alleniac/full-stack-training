@@ -1,0 +1,16 @@
+{
+  "name": "full-stack-training",
+  "version": "1.0.0",
+  "description": "This is a full-stack web app deployed on AWS, with React at frontend and Express at backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "AWS",
+    "React",
+    "Express"
+  ],
+  "author": "Allen Ma",
+  "license": "ISC"
+}
