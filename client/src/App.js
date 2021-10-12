@@ -1,22 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [ info, setInfo ] = useState(null);
+
+  function onFetchButtonClick() {
+    fetch('/api/info')
+      .then(res => res.json())
+      .then(payload => setInfo(payload))
+  }
+  
+  function onClearButtonClick() {
+    setInfo(null);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={onFetchButtonClick}>Fetch</button>
+        <button onClick={onClearButtonClick}>Clear</button>
+        {info && 
+          <p>
+            {`Name: ${info.name}.`}
+            <br/>
+            {`Position: ${info.position}.`}
+          </p>
+        }
       </header>
     </div>
   );
