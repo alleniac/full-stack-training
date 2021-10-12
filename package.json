@@ -4,7 +4,11 @@
   "description": "This is a full-stack web app deployed on AWS, with React at frontend and Express at backend",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && npm start",
+    "server": "nodemon --ignore client/ server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js"
   },
   "keywords": [
     "AWS",
@@ -12,5 +16,12 @@
     "Express"
   ],
   "author": "Allen Ma",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "nodemon": "^2.0.13"
+  }
 }
