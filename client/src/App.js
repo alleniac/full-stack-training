@@ -17,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <p>Hello</p>
         <button onClick={onFetchButtonClick}>Fetch</button>
         <button onClick={onClearButtonClick}>Clear</button>
         {info && 
